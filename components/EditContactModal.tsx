@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import { CloseIcon, BackIcon } from "./icons";
+import { CloseIcon, BackIcon, CautionCircleIcon } from "./icons";
 import { validatePhone, validateEmail, validateTaxId } from "./validation";
 
 function TextField({
@@ -19,19 +19,24 @@ function TextField({
   return (
     <div>
       <label
-        className={`flex h-[62px] cursor-text flex-col justify-center gap-0.5 rounded-md border px-3 transition-colors ${
+        className={`flex h-[62px] cursor-text items-center gap-3 rounded-md border px-3 transition-colors ${
           error
-            ? "border-[var(--red)] focus-within:border-[var(--red)]"
+            ? "border-[var(--red)] ring-2 ring-[var(--red-soft)] focus-within:border-[var(--red)]"
             : "border-[#c9ccd1] focus-within:border-[var(--blue)]"
         }`}
       >
-        <span className="text-[13px] leading-4 text-[var(--text-muted)]">{label}</span>
-        <input
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          aria-invalid={error ? true : undefined}
-          className="w-full bg-transparent text-[17px] leading-5 text-[var(--text-body)] outline-none"
-        />
+        <span className="flex min-w-0 flex-1 flex-col justify-center gap-0.5">
+          <span className="text-[13px] leading-4 text-[var(--text-muted)]">{label}</span>
+          <input
+            value={value}
+            onChange={(e) => onChange(e.target.value)}
+            aria-invalid={error ? true : undefined}
+            className="w-full bg-transparent text-[17px] leading-5 text-[var(--text-body)] outline-none"
+          />
+        </span>
+        {error && (
+          <CautionCircleIcon className="shrink-0 text-[var(--red)]" />
+        )}
       </label>
       {error && (
         <p className="mt-1 text-[13px] leading-snug text-[var(--red)]">{error}</p>

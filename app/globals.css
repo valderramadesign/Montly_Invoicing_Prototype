@@ -21,6 +21,7 @@
   --link: #1461cc; /* Text/Text Link */
   --green: #31a24c;
   --red: #e11900; /* Status/Negative — field validation errors */
+  --red-soft: #ffe3de; /* Status/Negative Deemphasized — error field highlight ring */
   --status-active: #63be09; /* Background/Background Success — account status dot */
   --status-negative: #d93616; /* Background/Background Error — disabled / payment failed */
   --status-closed: rgba(0, 0, 0, 0.3); /* hollow ring for closed accounts */

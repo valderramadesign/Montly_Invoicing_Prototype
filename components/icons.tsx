@@ -260,6 +260,23 @@ export function InfoIcon({ className }: { className?: string }) {
   );
 }
 
+export function CautionCircleIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      aria-hidden
+    >
+      <circle cx="10" cy="10" r="9" fill="currentColor" />
+      <rect x="9.1" y="5" width="1.8" height="6" rx="0.9" fill="#fff" />
+      <circle cx="10" cy="13.85" r="1.05" fill="#fff" />
+    </svg>
+  );
+}
+
 export function AccountAvatarGlyph({ className }: { className?: string }) {
   return (
     <svg
