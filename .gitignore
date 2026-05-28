@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local design reference crops (not part of the app)
+_design-ref/
+
+# local editor config
+.claude/

@@ -1,19 +1,25 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Pay in 4 Prototype",
-  description: "PayPal Pay in 4 interactive prototype",
+  title: "Billing & payments · Meta",
+  description:
+    "Meta Billing & payments — manage ad account payment methods and explore monthly invoicing.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en" className="h-full">
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
   );
 }

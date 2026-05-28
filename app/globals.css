@@ -1,21 +1,72 @@
 @import "tailwindcss";
 
+/*
+  Meta "Billing & payments" palette — values lifted from the MI Application
+  "Banner" Figma frame (Geo design system tokens). Text is rendered as
+  semi-transparent black the way the product does, dividers are a 15% black
+  hairline, and cards sit on a faint elevation shadow rather than a border.
+*/
 :root {
-  --sys-background-main: #F1F2F3;
-  --sys-background-surface: #FFFFFF;
-  --sys-background-high-contrast: #001435;
-  --sys-background-medium-contrast: #545D68;
-  --sys-primary: #0544B5;
-  --sys-secondary: #0070E0;
-  --sys-featured-main: #FFD140;
-  --sys-card-stroke: #E9ECF0;
-  --sys-border-high-contrast: #929496;
-  --sys-focus: #097FF5;
-  --sys-accent3: #388C00;
+  --bg: #f2f2f2; /* Background/Background Page */
+  --surface: #ffffff; /* Background/Background Content */
+  --text: rgba(0, 0, 0, 0.85); /* values / primary */
+  --text-heading: rgba(0, 0, 0, 0.75);
+  --text-body: #080809; /* Text/Primary Text — promo body */
+  --text-secondary: rgba(0, 0, 0, 0.75); /* labels / nav idle */
+  --text-tertiary: rgba(0, 0, 0, 0.55); /* placeholders */
+  --blue: #1877f2; /* Interactive/Interactive Primary Idle */
+  --blue-strong: #166fe0;
+  --blue-active: #1771ed; /* Interactive/Interactive Navigation Text Active */
+  --blue-soft: rgba(24, 119, 242, 0.1); /* active nav + tab wash */
+  --link: #1461cc; /* Text/Text Link */
+  --green: #31a24c;
+  --red: #e11900; /* Status/Negative — field validation errors */
+  --status-active: #63be09; /* Background/Background Success — account status dot */
+  --status-negative: #d93616; /* Background/Background Error — disabled / payment failed */
+  --status-closed: rgba(0, 0, 0, 0.3); /* hollow ring for closed accounts */
+  --pay-credit-line: #008bd0; /* credit-line payment chip */
+  --pay-prepaid: #4cbba6; /* prepaid-funds payment chip */
+  --border: rgba(0, 0, 0, 0.15);
+  --border-soft: rgba(0, 0, 0, 0.15);
+  --surface-hover: rgba(0, 0, 0, 0.05);
+  --btn-secondary: rgba(0, 0, 0, 0.05); /* Interactive/Interactive Wash */
+  --btn-secondary-hover: rgba(0, 0, 0, 0.08);
+  --avatar-w-bg: #99d4e2;
+  --avatar-w-text: #3f728e;
+  --avatar-account-bg: rgba(0, 0, 0, 0.05);
+  --avatar-account-fg: rgba(0, 0, 0, 0.75);
+  --wash: #f0f2f5; /* Background/Wash — circular icon chips */
+  --text-muted: #65686c; /* Text/Secondary — disclaimer */
+  --divider: #d0d3d7; /* Divider/Strong */
+  --shadow-card: 0px 0px 0.5px rgba(0, 0, 0, 0.1),
+    0px 0px 2px rgba(0, 0, 0, 0.1); /* Elevation 1 */
+  --shadow-overlay: 0px 16px 32px rgba(0, 0, 0, 0.1),
+    0px 0px 2px rgba(0, 0, 0, 0.1); /* Elevation 3 — dialog */
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-ink: var(--text);
+  --color-ink-soft: var(--text-secondary);
+  --color-brand: var(--blue);
+}
+
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--sys-background-main);
-  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
 }
